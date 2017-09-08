@@ -1,0 +1,664 @@
+# 企业接口
+
+对应SDK类：EnterpriseCenter  
+*	根据企业ID获取企业信息  
+基本信息
+
+<table>
+   <tr>
+      <td>描述</td>
+      <td>根据企业ID获取该用户所在企业信息</td>
+   </tr>
+   <tr>
+      <td>路径</td>
+      <td>/enterprise/get</td>
+   </tr>
+   <tr>
+      <td>请求方法</td>
+      <td>GET</td>
+   </tr>
+   <tr>
+      <td>SDK方法</td>
+      <td>public static String get(String enterpriseId)</td>
+   </tr>
+</table>
+
+请求参数
+
+<table>
+   <tr>
+      <td>参数名称</td>
+      <td>类型</td>
+      <td>描述</td>
+   </tr>
+   <tr>
+      <td>enterpriseId</td>
+      <td>String</td>
+      <td>企业ID</td>
+   </tr>
+</table>
+
+返回值
+
+<table>
+   <tr>
+      <td>字段</td>
+      <td>类型</td>
+      <td>描述</td>
+   </tr>
+   <tr>
+      <td>status</td>
+      <td>String</td>
+      <td>请求的状态，如果为0，表示失败，如果为1，表示成功</td>
+   </tr>
+   <tr>
+      <td>enterprise</td>
+      <td>EnterpriseInfo</td>
+      <td>企业信息列表；status为0时无该字段</td>
+   </tr>
+   <tr>
+      <td>msg</td>
+      <td>String</td>
+      <td>失败信息的描述；当status为1时，无该字段</td>
+   </tr>
+</table>
+
+ EnterpriseInfo对象字段说明
+ 
+ <table>
+   <tr>
+      <td>字段</td>
+      <td>类型</td>
+      <td>描述</td>
+      <td>示例</td>
+   </tr>
+   <tr>
+      <td>enterId</td>
+      <td>String</td>
+      <td>企业ID</td>
+      <td>f38b12df-33ee-48e0-a40a-61378355ff37</td>
+   </tr>
+   <tr>
+      <td>enterName</td>
+      <td>String</td>
+      <td>企业名称</td>
+      <td>用友</td>
+   </tr>
+   <tr>
+      <td>enterType</td>
+      <td>String</td>
+      <td>公司类型</td>
+      <td> </td>
+   </tr>
+   <tr>
+      <td>ispartner </td>
+      <td>Boolean</td>
+      <td>是否为合作伙伴</td>
+      <td>0</td>
+   </tr>
+   <tr>
+      <td>logoPath</td>
+      <td>String</td>
+      <td>logo路径</td>
+      <td>http://uclient.yonyou.com//style/image/defaultcompany.png</td>
+   </tr>
+   <tr>
+      <td></td>
+   </tr>
+   <tr>
+      <td>enterAddress</td>
+      <td>String</td>
+      <td>企业地址</td>
+      <td>北京市</td>
+   </tr>
+   <tr>
+      <td>enterScale</td>
+      <td>String</td>
+      <td>企业规模</td>
+      <td>10-100人</td>
+   </tr>
+   <tr>
+      <td>enterLegalrepre</td>
+      <td>String</td>
+      <td>法人代表</td>
+      <td>王伟</td>
+   </tr>
+   <tr>
+      <td>enterDetailaddress</td>
+      <td>String</td>
+      <td>企业详细地址</td>
+      <td>海淀区北清路68号</td>
+   </tr>
+   <tr>
+      <td>superiorEnter</td>
+      <td>String</td>
+      <td> </td>
+      <td>上一级公司</td>
+   </tr>
+   <tr>
+      <td>industry</td>
+      <td>String</td>
+      <td>行业</td>
+      <td>IT</td>
+   </tr>
+   <tr>
+      <td>contactName</td>
+      <td>String</td>
+      <td>联系人姓名</td>
+      <td>王伟</td>
+   </tr>
+   <tr>
+      <td>contactEmail</td>
+      <td>String</td>
+      <td>联系Email</td>
+      <td> </td>
+   </tr>
+   <tr>
+      <td>contactMobile</td>
+      <td>String</td>
+      <td>联系电话</td>
+      <td>136****4532</td>
+   </tr>
+   <tr>
+      <td>registerTime</td>
+      <td>String</td>
+      <td>注册时间</td>
+      <td>2016-12-11 19:38:43</td>
+   </tr>
+   <tr>
+      <td>lastTime</td>
+      <td>String</td>
+      <td>最后更新时间</td>
+      <td>2016-12-11 19:38:43</td>
+   </tr>
+   <tr>
+      <td>auditStatus</td>
+      <td>String</td>
+      <td>审计状态</td>
+      <td>auditing</td>
+   </tr>
+</table>
+
+*	根据企业名称查找企业  	
+基本信息
+
+<table>
+   <tr>
+      <td>描述</td>
+      <td>根据用户ID获取该用户所在企业信息（模糊查询）</td>
+   </tr>
+   <tr>
+      <td>路径</td>
+      <td>/enterprise/search</td>
+   </tr>
+   <tr>
+      <td>请求方法</td>
+      <td>GET</td>
+   </tr>
+   <tr>
+      <td>SDK方法</td>
+      <td>public static String search(String enterpriseName)</td>
+   </tr>
+</table>
+
+请求参数
+
+<table>
+   <tr>
+      <td>参数名称</td>
+      <td>类型</td>
+      <td>描述</td>
+   </tr>
+   <tr>
+      <td>enterpriseName</td>
+      <td>String</td>
+      <td>企业名称</td>
+   </tr>
+</table>
+
+返回值
+
+<table>
+   <tr>
+      <td>字段</td>
+      <td>类型</td>
+      <td>描述</td>
+   </tr>
+   <tr>
+      <td>status</td>
+      <td>String</td>
+      <td>请求的状态，如果为0，表示失败，如果为1，表示成功</td>
+   </tr>
+   <tr>
+      <td>enterprises</td>
+      <td>List<EnterpriseInfo></td>
+      <td>企业信息列表；status为0时无该字段</td>
+   </tr>
+   <tr>
+      <td>msg</td>
+      <td>String</td>
+      <td>失败信息的描述；当status为1时，无该字段</td>
+   </tr>
+</table>
+
+*	根据企业ID和用户姓名获取用户信息  
+基本信息
+
+<table>
+   <tr>
+      <td>描述</td>
+      <td>根据企业ID和用户姓名获取该企业下属的用户（模糊查询、支持分页）</td>
+   </tr>
+   <tr>
+      <td>路径</td>
+      <td>/enterprise/searchuserpage</td>
+   </tr>
+   <tr>
+      <td>请求方法</td>
+      <td>GET</td>
+   </tr>
+   <tr>
+      <td>SDK方法</td>
+      <td>public static String searchUser(String enterpriseId, String userName, int pageNumber, int pageSize, String sortType)</td>
+   </tr>
+</table>
+
+请求参数
+
+<table>
+   <tr>
+      <td>参数名称</td>
+      <td>类型</td>
+      <td>描述</td>
+   </tr>
+   <tr>
+      <td>enterpriseId</td>
+      <td>String</td>
+      <td>企业ID</td>
+   </tr>
+   <tr>
+      <td>userName</td>
+      <td>String</td>
+      <td>用户姓名</td>
+   </tr>
+   <tr>
+      <td>pageNumber</td>
+      <td>int</td>
+      <td>页码</td>
+   </tr>
+   <tr>
+      <td>pageSize</td>
+      <td>int</td>
+      <td>页面大小</td>
+   </tr>
+   <tr>
+      <td>sortType</td>
+      <td>String</td>
+      <td>排序依据</td>
+   </tr>
+</table>
+
+返回值
+
+<table>
+   <tr>
+      <td>字段</td>
+      <td>类型</td>
+      <td>描述</td>
+   </tr>
+   <tr>
+      <td>status</td>
+      <td>String</td>
+      <td>请求的状态，如果为0，表示失败，如果为1，表示成功</td>
+   </tr>
+   <tr>
+      <td>users</td>
+      <td>JSONObject</td>
+      <td>多用户页面信息（包括用户信息、分页信息、排序信息)[详细描述同]</td>
+   </tr>
+   <tr>
+      <td>msg</td>
+      <td>String</td>
+      <td>失败信息的描述；当status为1时，无该字段</td>
+   </tr>
+</table>
+
+users字段（JSONObject）key值说明
+
+<table>
+   <tr>
+      <td>Key</td>
+      <td>类型</td>
+      <td>描述</td>
+   </tr>
+   <tr>
+      <td>number</td>
+      <td>int</td>
+      <td>当前页码</td>
+   </tr>
+   <tr>
+      <td>totalpages</td>
+      <td>int</td>
+      <td>总页数</td>
+   </tr>
+   <tr>
+      <td>content</td>
+      <td>List<TenantUser></td>
+      <td>User列表</td>
+   </tr>
+   <tr>
+      <td>totalElements</td>
+      <td>int</td>
+      <td>元素总个数</td>
+   </tr>
+   <tr>
+      <td>sort</td>
+      <td>JSONObject</td>
+      <td>分页排序方式</td>
+   </tr>
+   <tr>
+      <td>first</td>
+      <td>boolean</td>
+      <td>第一个元素是否在当前页</td>
+   </tr>
+   <tr>
+      <td>firstpage</td>
+      <td>boolean</td>
+      <td>是否是第一页</td>
+   </tr>
+   <tr>
+      <td>last</td>
+      <td>boolean</td>
+      <td>最后一个元素是否在当前页</td>
+   </tr>
+   <tr>
+      <td>lastpage</td>
+      <td>boolean</td>
+      <td>是否是最后一页</td>
+   </tr>
+   <tr>
+      <td>numberOfElements</td>
+      <td>int</td>
+      <td>当前页的元素个数</td>
+   </tr>
+   <tr>
+      <td>size</td>
+      <td>int</td>
+      <td>页面的大小</td>
+   </tr>
+</table>
+
+ key值中sort（JSONObject）key值说明
+ 
+ <table>
+   <tr>
+      <td>Key</td>
+      <td>类型</td>
+      <td>描述</td>
+   </tr>
+   <tr>
+      <td>nullHandling</td>
+      <td>NullHandling</td>
+      <td>处理nulls的方式</td>
+   </tr>
+   <tr>
+      <td>ignoreCase</td>
+      <td>boolean</td>
+      <td>排序是否区分大小写</td>
+   </tr>
+   <tr>
+      <td>property</td>
+      <td>String</td>
+      <td>用于排序的属性</td>
+   </tr>
+   <tr>
+      <td>ascending</td>
+      <td>boolean</td>
+      <td>是否为升序排序方式</td>
+   </tr>
+   <tr>
+      <td>direction</td>
+      <td>Direction</td>
+      <td>排序方式</td>
+   </tr>
+</table>
+
+*	根据用户ID获取该用户所在企业信息  
+基本信息
+
+<table>
+   <tr>
+      <td>描述</td>
+      <td>根据用户ID获取该用户所在企业信息</td>
+   </tr>
+   <tr>
+      <td>路径</td>
+      <td>/enterprise/listEnterprise</td>
+   </tr>
+   <tr>
+      <td>请求方法</td>
+      <td>GET</td>
+   </tr>
+   <tr>
+      <td>SDK方法</td>
+      <td>public static String listEnterprise(String userId)</td>
+   </tr>
+</table>
+
+请求参数
+
+<table>
+   <tr>
+      <td>参数名称</td>
+      <td>类型</td>
+      <td>描述</td>
+   </tr>
+   <tr>
+      <td>userId</td>
+      <td>String</td>
+      <td>用户ID</td>
+   </tr>
+</table>
+
+返回值
+
+<table>
+   <tr>
+      <td>字段</td>
+      <td>类型</td>
+      <td>描述</td>
+   </tr>
+   <tr>
+      <td>status</td>
+      <td>String</td>
+      <td>请求的状态，如果为0，表示失败，如果为1，表示成功</td>
+   </tr>
+   <tr>
+      <td>enterprises</td>
+      <td>List<EnterpriseInfo></td>
+      <td>企业信息列表；status为0时无该字段</td>
+   </tr>
+   <tr>
+      <td>msg</td>
+      <td>String</td>
+      <td>失败信息的描述；当status为1时，无该字段</td>
+   </tr>
+</table>
+
+*	根据企业ID获取用户信息  
+基本信息
+
+<table>
+   <tr>
+      <td>描述</td>
+      <td>根据企业ID获取该企业下属的用户</td>
+   </tr>
+   <tr>
+      <td>路径</td>
+      <td>/enterprise/listuserpage</td>
+   </tr>
+   <tr>
+      <td>请求方法</td>
+      <td>GET</td>
+   </tr>
+   <tr>
+      <td>SDK方法</td>
+      <td>public static String listUser(String enterpriseId, int pageNumber, int pageSize, String sortType)</td>
+   </tr>
+</table>
+
+请求参数
+
+<table>
+   <tr>
+      <td>参数名称</td>
+      <td>类型</td>
+      <td>描述</td>
+   </tr>
+   <tr>
+      <td>enterpriseId</td>
+      <td>String</td>
+      <td>企业ID</td>
+   </tr>
+   <tr>
+      <td>pageNumber</td>
+      <td>int</td>
+      <td>页码</td>
+   </tr>
+   <tr>
+      <td>pageSize</td>
+      <td>int</td>
+      <td>页面大小</td>
+   </tr>
+   <tr>
+      <td>sortType</td>
+      <td>String</td>
+      <td>排序依据</td>
+   </tr>
+</table>
+
+返回值
+
+<table>
+   <tr>
+      <td>字段</td>
+      <td>类型</td>
+      <td>描述</td>
+   </tr>
+   <tr>
+      <td>status</td>
+      <td>String</td>
+      <td>请求的状态，如果为0，表示失败，如果为1，表示成功</td>
+   </tr>
+   <tr>
+      <td>users</td>
+      <td>JSONObject</td>
+      <td>多用户页面信息（包括用户信息、分页信息、排序信息）</td>
+   </tr>
+   <tr>
+      <td>msg</td>
+      <td>String</td>
+      <td>失败信息的描述；当status为1时，无该字段</td>
+   </tr>
+</table>
+
+ users字段（JSONObject）key值说明
+ 
+ <table>
+   <tr>
+      <td>Key</td>
+      <td>类型</td>
+      <td>描述</td>
+   </tr>
+   <tr>
+      <td>number</td>
+      <td>int</td>
+      <td>当前页码</td>
+   </tr>
+   <tr>
+      <td>totalpages</td>
+      <td>int</td>
+      <td>总页数</td>
+   </tr>
+   <tr>
+      <td>content</td>
+      <td>List<TenantUser></td>
+      <td>User列表</td>
+   </tr>
+   <tr>
+      <td>totalElements</td>
+      <td>int</td>
+      <td>元素总个数</td>
+   </tr>
+   <tr>
+      <td>sort</td>
+      <td>JSONObject</td>
+      <td>分页排序方式</td>
+   </tr>
+   <tr>
+      <td>first</td>
+      <td>boolean</td>
+      <td>第一个元素是否在当前页</td>
+   </tr>
+   <tr>
+      <td>firstpage</td>
+      <td>boolean</td>
+      <td>是否是第一页</td>
+   </tr>
+   <tr>
+      <td>last</td>
+      <td>boolean</td>
+      <td>最后一个元素是否在当前页</td>
+   </tr>
+   <tr>
+      <td>lastpage</td>
+      <td>boolean</td>
+      <td>是否是最后一页</td>
+   </tr>
+   <tr>
+      <td>numberOfElements</td>
+      <td>int</td>
+      <td>当前页的元素个数</td>
+   </tr>
+   <tr>
+      <td>size</td>
+      <td>int</td>
+      <td>页面的大小</td>
+   </tr>
+</table>
+
+key值中sort（JSONObject）key值说明
+
+<table>
+   <tr>
+      <td>Key</td>
+      <td>类型</td>
+      <td>描述</td>
+   </tr>
+   <tr>
+      <td>nullHandling</td>
+      <td>NullHandling</td>
+      <td>处理nulls的方式</td>
+   </tr>
+   <tr>
+      <td>ignoreCase</td>
+      <td>boolean</td>
+      <td>排序是否区分大小写</td>
+   </tr>
+   <tr>
+      <td>property</td>
+      <td>String</td>
+      <td>用于排序的属性</td>
+   </tr>
+   <tr>
+      <td>ascending</td>
+      <td>boolean</td>
+      <td>是否为升序排序方式</td>
+   </tr>
+   <tr>
+      <td>direction</td>
+      <td>Direction</td>
+      <td>排序方式</td>
+   </tr>
+</table>
+

@@ -1,0 +1,28 @@
+# 友互通
+* 概述
+   * [概述](gai_shu.md)
+* 快速入门
+   * [快速入门](kuai_su_ru_men.md)
+* 规范约束
+   * [友互通模型](chapter3_section1.md)
+   * 接入技术规范
+       * [登录协议](chapter3_section2.md)
+       * [配置会话存储](chapter3_section3.md)
+       * [单点登录配置](chapter3_section4.md)
+       * [SDK调用签名配置](chapter3_section5.md)
+       * [忽略登录拦截](chapter3_section6.md)
+       * [注销](chapter3_section7.md)
+       * [OAuth2.0登录授权](chapter3_section8.md)
+       * [登录页面个性化配置](chapter3_section9.md)
+       * [页面服务](chapter3_section10.md)
+   * 接口说明
+       * [用户接口](chapter3_section11.md)
+       * [OAuth2接口](chapter3_section12.md)
+       * [用户标签接口](chapter3_section13.md)
+       * [用户组接口](chapter3_section14.md)
+       * [企业接口](chapter3_section15.md)
+* 特性介绍
+   * [特性介绍](te_xing_jie_shao.md)
+* 典型场景
+   * [典型场景](dian_xing_chang_jing.md)
+
